@@ -1,0 +1,225 @@
+:root {
+    --font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --body-color: #efefef;
+    --container-color: #fafafa;
+    --first-color: #0d2476;
+    --second-color: #4070f4;
+    --text-color: #222;
+    --text-info: #888;
+}
+
+body.dark-theme {
+    --body-color: #141722;
+    --container-color: #242a41;
+    --first-color: #0d2476;
+    --second-color: #4070f4;
+    --text-color: #f1f1f1;
+    --text-info: #bbb;
+}
+
+*,
+::before,
+::after {
+    transition: background 0.325s, color 0.125s;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-sans-serif);
+    background: var(--body-color);
+}
+
+.container {
+    position: relative;
+    width: 340px;
+    padding: 30px 35px;
+    border-radius: 12px;
+    background: var(--container-color);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+header span {
+    display: flex;
+    align-items: center;
+}
+
+header input {
+    position: relative;
+    width: 45px;
+    height: 25px;
+    cursor: pointer;
+    appearance: none;
+    border-radius: 50px;
+    background: var(--body-color);
+}
+
+header input::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    bottom: 3px;
+    width: 19px;
+    border-radius: 50%;
+    transition: 0.3s;
+    background: var(--container-color);
+}
+
+header input.active::before {
+    left: 23px;
+}
+
+header i {
+    font-size: 20px;
+    margin-left: 8px;
+    color: var(--text-color);
+}
+
+main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img-box {
+    position: relative;
+    width: 175px;
+    height: 175px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.text {
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text.text-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.text.text-work {
+    font-size: 18px;
+    color: var(--text-info);
+}
+
+main p {
+    margin: 15px 0 20px;
+    font-size: 16px;
+    text-align: center;
+    color: var(--text-info);
+}
+
+.btn {
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 12px 32px;
+    outline: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--first-color), var(--second-color));
+    color: #f2f2f2;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), inset 2px 2px 3px rgba(0, 0, 0, 0.5), inset -2px -2px 3px rgba(0, 0, 0, 0.3);
+}
+
+hr {
+    margin: 25px 0 20px;
+}
+
+.social {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social .box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box .social-icon {
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.2s;
+    color: #f2f2f2;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.box .social-icon:hover {
+    transform: translateY(-5px);
+}
+
+.box:nth-child(1) .social-icon {
+    background: linear-gradient(135deg, #c00b69, #f755a3);
+}
+
+.box:nth-child(2) .social-icon {
+    background: linear-gradient(135deg, #0b1875, #6ca8fc);
+}
+
+.box:nth-child(3) .social-icon {
+    background: linear-gradient(135deg, #aa1609, #f24a30);
+}
+
+.box span {
+    position: relative;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.box span::before {
+    content: 'Seguidores';
+    position: absolute;
+    left: 50%;
+    bottom: -22px;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #999;
+}
